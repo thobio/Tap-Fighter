@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina3_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Papyrus.ttc">
+            <string>Papyrus</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TapFighter" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M5D-MK-LQV" customClass="GADBannerView">
+                                <rect key="frame" x="0.0" y="430" width="320" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="6vZ-F3-oO4"/>
+                                </constraints>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="vDz-28-MSf">
+                                <rect key="frame" x="16" y="20" width="288" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="Xn4-fc-5Ae"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d7G-Mc-rfV" customClass="UIButtonRound" customModule="TapFighter" customModuleProvider="target">
+                                <rect key="frame" x="16" y="186" width="288" height="50"/>
+                                <color key="backgroundColor" red="0.97254901960784312" green="0.45098039215686275" blue="0.45490196078431372" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="8Sj-g5-toY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="30"/>
+                                <state key="normal" title="High Score">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gQZ-eU-H4d" customClass="UIButtonRound" customModule="TapFighter" customModuleProvider="target">
+                                <rect key="frame" x="16" y="372" width="288" height="50"/>
+                                <color key="backgroundColor" red="0.97254901960784312" green="0.45098039215686275" blue="0.45490196078431372" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="X7L-0i-tjf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="30"/>
+                                <state key="normal" title="Start Game">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="startGameActionFunction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sAl-7S-wJL"/>
+                                    <segue destination="NC1-eY-ahl" kind="show" id="HOA-bh-RUG"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ZC-um-tBT">
+                                <rect key="frame" x="16" y="244" width="288" height="120"/>
+                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="150"/>
+                                <color key="textColor" red="0.97254901960784312" green="0.45098039215686275" blue="0.45490196078431372" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="vDz-28-MSf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="4K9-Xb-vAL"/>
+                            <constraint firstItem="M5D-MK-LQV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5AL-SH-Z56"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9ZC-um-tBT" secondAttribute="trailing" constant="16" id="66m-wK-Sev"/>
+                            <constraint firstItem="M5D-MK-LQV" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="80l-PI-uL9"/>
+                            <constraint firstItem="d7G-Mc-rfV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="CK0-7k-Lxn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="d7G-Mc-rfV" secondAttribute="trailing" constant="16" id="HPw-6I-Sd4"/>
+                            <constraint firstItem="M5D-MK-LQV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Le9-tG-mVW"/>
+                            <constraint firstItem="d7G-Mc-rfV" firstAttribute="top" secondItem="vDz-28-MSf" secondAttribute="bottom" constant="16" id="Lk7-XJ-VAb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vDz-28-MSf" secondAttribute="trailing" constant="16" id="dNd-ZI-bwO"/>
+                            <constraint firstItem="9ZC-um-tBT" firstAttribute="top" secondItem="d7G-Mc-rfV" secondAttribute="bottom" constant="8" id="hZf-Ws-pNw"/>
+                            <constraint firstItem="M5D-MK-LQV" firstAttribute="top" secondItem="gQZ-eU-H4d" secondAttribute="bottom" constant="8" id="hxU-mt-8eH"/>
+                            <constraint firstItem="gQZ-eU-H4d" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="igW-ms-E5t"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gQZ-eU-H4d" secondAttribute="trailing" constant="16" id="mdC-lN-zmH"/>
+                            <constraint firstItem="vDz-28-MSf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="oXr-Fn-T3Y"/>
+                            <constraint firstItem="M5D-MK-LQV" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="rUr-4B-VIg"/>
+                            <constraint firstItem="gQZ-eU-H4d" firstAttribute="top" secondItem="9ZC-um-tBT" secondAttribute="bottom" constant="8" id="vb1-uO-juC"/>
+                            <constraint firstItem="9ZC-um-tBT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="zIh-ur-TM5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="bannerViewAd" destination="M5D-MK-LQV" id="qNG-sC-blN"/>
+                        <outlet property="highScoreLabel" destination="9ZC-um-tBT" id="dB9-IL-6YB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-611" y="15"/>
+        </scene>
+        <!--Game View Controller-->
+        <scene sceneID="0xb-09-3ID">
+            <objects>
+                <viewController id="NC1-eY-ahl" customClass="GameViewController" customModule="TapFighter" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gOZ-mF-pEj">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Left  : 10   " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XsS-Jw-1E4">
+                                <rect key="frame" x="0.0" y="20" width="307" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="aNE-6K-lBz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="18"/>
+                                <color key="textColor" red="0.97254901959999995" green="0.45098039220000002" blue="0.4549019608" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="smallicon 32" translatesAutoresizingMaskIntoConstraints="NO" id="yvJ-nY-QjH">
+                                <rect key="frame" x="272" y="20" width="32" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="32" id="jLM-5O-g3Q"/>
+                                    <constraint firstAttribute="height" constant="32" id="mXz-Vs-ZDS"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap Me" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TPJ-R6-g6S">
+                                <rect key="frame" x="13" y="96" width="294" height="288"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="288" id="4eu-Q9-zyU"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="288" id="Ugo-CP-eOE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="90"/>
+                                <color key="textColor" red="0.97254901959999995" green="0.45098039220000002" blue="0.4549019608" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Qh-MS-EX8" customClass="GADBannerView">
+                                <rect key="frame" x="0.0" y="430" width="320" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="MNl-1D-aAB"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8HR-U7-y8J" userLabel="TapView">
+                                <rect key="frame" x="0.0" y="20" width="320" height="410"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Y3a-TV-ex7" appends="YES" id="PGc-MT-xfd"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="XsS-Jw-1E4" firstAttribute="leading" secondItem="Vdh-7f-IdT" secondAttribute="leading" id="Agt-2v-HWP"/>
+                            <constraint firstItem="Vdh-7f-IdT" firstAttribute="bottom" secondItem="0Qh-MS-EX8" secondAttribute="bottom" id="DcK-6a-j4R"/>
+                            <constraint firstItem="0Qh-MS-EX8" firstAttribute="leading" secondItem="Vdh-7f-IdT" secondAttribute="leading" id="FmP-LT-UAU"/>
+                            <constraint firstItem="yvJ-nY-QjH" firstAttribute="top" secondItem="Vdh-7f-IdT" secondAttribute="top" id="MCu-49-Cpe"/>
+                            <constraint firstItem="0Qh-MS-EX8" firstAttribute="trailing" secondItem="Vdh-7f-IdT" secondAttribute="trailing" id="SO1-h3-Vzy"/>
+                            <constraint firstItem="TPJ-R6-g6S" firstAttribute="centerY" secondItem="gOZ-mF-pEj" secondAttribute="centerY" id="TLg-0T-8lf"/>
+                            <constraint firstItem="TPJ-R6-g6S" firstAttribute="centerX" secondItem="gOZ-mF-pEj" secondAttribute="centerX" id="Ud7-cB-uFz"/>
+                            <constraint firstItem="8HR-U7-y8J" firstAttribute="leading" secondItem="Vdh-7f-IdT" secondAttribute="leading" id="avC-T4-nKP"/>
+                            <constraint firstItem="XsS-Jw-1E4" firstAttribute="trailing" secondItem="Vdh-7f-IdT" secondAttribute="trailing" constant="-13" id="e3i-LH-ftB"/>
+                            <constraint firstItem="yvJ-nY-QjH" firstAttribute="top" secondItem="Vdh-7f-IdT" secondAttribute="top" id="eT3-NY-ebL"/>
+                            <constraint firstItem="XsS-Jw-1E4" firstAttribute="top" secondItem="Vdh-7f-IdT" secondAttribute="top" id="j0M-dx-ccn"/>
+                            <constraint firstItem="8HR-U7-y8J" firstAttribute="trailing" secondItem="Vdh-7f-IdT" secondAttribute="trailing" id="laz-cD-IRf"/>
+                            <constraint firstItem="8HR-U7-y8J" firstAttribute="top" secondItem="Vdh-7f-IdT" secondAttribute="top" id="tFT-2E-QTM"/>
+                            <constraint firstItem="Vdh-7f-IdT" firstAttribute="trailing" secondItem="yvJ-nY-QjH" secondAttribute="trailing" constant="16" id="ylp-LK-SUZ"/>
+                            <constraint firstItem="0Qh-MS-EX8" firstAttribute="top" secondItem="8HR-U7-y8J" secondAttribute="bottom" id="zd6-Tr-fhM"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Vdh-7f-IdT"/>
+                    </view>
+                    <connections>
+                        <outlet property="bannerView" destination="0Qh-MS-EX8" id="0sD-8d-bgz"/>
+                        <outlet property="leftsmallIconConstraint" destination="ylp-LK-SUZ" id="JfL-pv-oqd"/>
+                        <outlet property="smallImageIcon" destination="yvJ-nY-QjH" id="SEx-Lj-laY"/>
+                        <outlet property="tapGestureOutlet" destination="Y3a-TV-ex7" id="6Dw-pO-ANP"/>
+                        <outlet property="tapMeLabel" destination="TPJ-R6-g6S" id="JCT-8D-EoK"/>
+                        <outlet property="timeLeftGameLabel" destination="XsS-Jw-1E4" id="8ID-q8-BUQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wyv-Mv-d87" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer cancelsTouchesInView="NO" id="Y3a-TV-ex7">
+                    <connections>
+                        <action selector="tapGestureFunction:" destination="NC1-eY-ahl" id="OcN-eu-jjf"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="166.875" y="15"/>
+        </scene>
+        <!--Final View Controller-->
+        <scene sceneID="hDp-7j-NeE">
+            <objects>
+                <viewController storyboardIdentifier="endGame" id="iMq-Pb-gqN" customClass="FinalViewController" customModule="TapFighter" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Vi2-78-fRg">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SHP-Mv-v20" customClass="UIButtonRound" customModule="TapFighter" customModuleProvider="target">
+                                <rect key="frame" x="16" y="364" width="288" height="50"/>
+                                <color key="backgroundColor" red="0.97254901959999995" green="0.45098039220000002" blue="0.4549019608" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="CbD-zg-FMi"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="30"/>
+                                <state key="normal" title="Restart Game">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="restartGame:" destination="iMq-Pb-gqN" eventType="touchUpInside" id="g93-Hb-AqS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mJv-xT-6w4" customClass="UIButtonRound" customModule="TapFighter" customModuleProvider="target">
+                                <rect key="frame" x="16" y="292" width="288" height="50"/>
+                                <color key="backgroundColor" red="0.97254901959999995" green="0.45098039220000002" blue="0.4549019608" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="lHX-KB-x0e"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="20"/>
+                                <state key="normal" title="Challenge your Friends">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="challengeYourFriends:" destination="iMq-Pb-gqN" eventType="touchUpInside" id="T4t-5W-rpn"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zFr-zJ-rjo">
+                                <rect key="frame" x="16" y="93" width="288" height="186"/>
+                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="100"/>
+                                <color key="textColor" red="0.97254901959999995" green="0.45098039220000002" blue="0.4549019608" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X3a-Rt-JaY" customClass="GADBannerView">
+                                <rect key="frame" x="0.0" y="430" width="320" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="tAS-ZB-pz5"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sTy-wX-R2s" customClass="UIButtonRound" customModule="TapFighter" customModuleProvider="target">
+                                <rect key="frame" x="16" y="41" width="288" height="50"/>
+                                <color key="backgroundColor" red="0.97254901959999995" green="0.45098039220000002" blue="0.4549019608" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Z5g-mh-7BP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="40"/>
+                                <state key="normal" title="Score">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="698-b8-fRT" firstAttribute="trailing" secondItem="zFr-zJ-rjo" secondAttribute="trailing" constant="16" id="4gf-FT-0qF"/>
+                            <constraint firstItem="sTy-wX-R2s" firstAttribute="leading" secondItem="698-b8-fRT" secondAttribute="leading" constant="16" id="C6V-aB-HBr"/>
+                            <constraint firstItem="X3a-Rt-JaY" firstAttribute="top" secondItem="SHP-Mv-v20" secondAttribute="bottom" constant="16" id="CfK-hE-kyw"/>
+                            <constraint firstItem="698-b8-fRT" firstAttribute="trailing" secondItem="SHP-Mv-v20" secondAttribute="trailing" constant="16" id="I23-bI-xrJ"/>
+                            <constraint firstItem="X3a-Rt-JaY" firstAttribute="bottom" secondItem="698-b8-fRT" secondAttribute="bottom" id="KhI-oO-VBM"/>
+                            <constraint firstItem="mJv-xT-6w4" firstAttribute="leading" secondItem="698-b8-fRT" secondAttribute="leading" constant="16" id="MXe-vZ-uUE"/>
+                            <constraint firstItem="SHP-Mv-v20" firstAttribute="leading" secondItem="698-b8-fRT" secondAttribute="leading" constant="16" id="OYW-EL-iYr"/>
+                            <constraint firstItem="698-b8-fRT" firstAttribute="trailing" secondItem="sTy-wX-R2s" secondAttribute="trailing" constant="16" id="ZHQ-bY-zRl"/>
+                            <constraint firstItem="698-b8-fRT" firstAttribute="trailing" secondItem="mJv-xT-6w4" secondAttribute="trailing" constant="16" id="bwg-A4-dGc"/>
+                            <constraint firstItem="SHP-Mv-v20" firstAttribute="top" secondItem="mJv-xT-6w4" secondAttribute="bottom" constant="22" id="fUC-f5-GyZ"/>
+                            <constraint firstItem="zFr-zJ-rjo" firstAttribute="top" secondItem="sTy-wX-R2s" secondAttribute="bottom" constant="2" id="kca-aE-5k7"/>
+                            <constraint firstItem="zFr-zJ-rjo" firstAttribute="leading" secondItem="698-b8-fRT" secondAttribute="leading" constant="16" id="lZA-bv-afi"/>
+                            <constraint firstItem="sTy-wX-R2s" firstAttribute="top" secondItem="698-b8-fRT" secondAttribute="top" constant="21" id="qyp-dz-Lls"/>
+                            <constraint firstItem="X3a-Rt-JaY" firstAttribute="leading" secondItem="698-b8-fRT" secondAttribute="leading" id="t2K-Fs-GEd"/>
+                            <constraint firstItem="mJv-xT-6w4" firstAttribute="top" secondItem="zFr-zJ-rjo" secondAttribute="bottom" constant="13" id="tNN-f5-9ey"/>
+                            <constraint firstItem="X3a-Rt-JaY" firstAttribute="trailing" secondItem="698-b8-fRT" secondAttribute="trailing" id="uJI-CX-eG4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="698-b8-fRT"/>
+                    </view>
+                    <connections>
+                        <outlet property="bannerView" destination="X3a-Rt-JaY" id="2dC-gs-lr5"/>
+                        <outlet property="currentScore" destination="zFr-zJ-rjo" id="GGh-5w-QmR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cgx-w2-6kB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="954" y="15"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="icon" width="666" height="666"/>
+        <image name="smallicon 32" width="32" height="32"/>
+    </resources>
+</document>
